@@ -1,0 +1,16 @@
+<h2>Registrar Mascota</h2>
+
+<form (submit)="guardar(nombre.value, tipo.value)">
+  <label>Nombre Mascota:</label>
+  <input #nombre required>
+
+  <label>Tipo:</label>
+  <select #tipo required>
+    <option value="Perro">Perro</option>
+    <option value="Gato">Gato</option>
+    <option value="Conejo">Conejo</option>
+    <option value="Ave">Ave</option>
+  </select>
+
+  <button type="submit">Guardar</button>
+</form>

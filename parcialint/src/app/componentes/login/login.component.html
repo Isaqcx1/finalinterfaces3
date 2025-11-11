@@ -1,0 +1,18 @@
+<div class="login-container">
+  <h2>Iniciar Sesión</h2>
+
+  <label>Usuario:</label>
+  <input type="text" [(ngModel)]="nombre" required />
+
+  <label>Contraseña:</label>
+  <input type="password" [(ngModel)]="password" required />
+
+  <button (click)="ingresar()">Ingresar</button>
+
+  <p class="mensaje" *ngIf="mensaje">{{ mensaje }}</p>
+
+  <p class="registro">
+    ¿No tienes cuenta?
+    <a routerLink="/register">Regístrate aquí</a>
+  </p>
+</div>

@@ -1,0 +1,39 @@
+<div class="contenedor-historial">
+  <h2>Historial de Citas</h2>
+
+  <label for="mascotaSelect">Seleccione una mascota:</label>
+  <select id="mascotaSelect" [(ngModel)]="mascotaSeleccionada" (change)="filtrarPorMascota()">
+    <option value="">-- Seleccione --</option>
+    <option *ngFor="let mascota of mascotas" [value]="mascota.nombre">
+      {{ mascota.nombre }}
+    </option>
+  </select>
+
+  <div *ngIf="citasFiltradas.length > 0; else mensaje">
+    <h3>Citas de la mascota: {{ mascotaSeleccionada }}</h3>
+    <h3>Tipo: {{ tipoActual }}</h3>
+    <h3>Dueño: {{ duenioActual }}</h3>
+    <table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Causa</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cita of citasFiltradas">
+      <td>{{ cita.fecha | formatoFecha }}</td>
+      <td>{{ cita.hora }}</td>
+      <td>{{ cita.motivo }}</td> 
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+  <ng-template #mensaje>
+    <p *ngIf="mascotaSeleccionada">No hay citas registradas para esta mascota.</p>
+    <p *ngIf="!mascotaSeleccionada">Seleccione una mascota para ver su historial.</p>
+  </ng-template>
+</div>

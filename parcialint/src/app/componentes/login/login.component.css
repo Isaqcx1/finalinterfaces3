@@ -1,0 +1,46 @@
+.login-container {
+  width: 320px;
+  margin: 100px auto;
+  padding: 25px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #fff;
+  text-align: center;
+}
+
+h2 {
+  color: #c00;
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #c00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #900;
+}
+
+.mensaje {
+  color: red;
+  margin-top: 10px;
+}
+
+.registro {
+  margin-top: 15px;
+  font-size: 14px;
+}

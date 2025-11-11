@@ -1,0 +1,88 @@
+/* ====== el fondo ====== */
+body {
+  background-color: #f7f7f7;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ====== contenedor ====== */
+form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  width: 420px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 auto;
+}
+
+/* ====== titulo ====== */
+h2 {
+  text-align: center;
+  color: #7a0a17;
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* ====== etiqueta ====== */
+label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  margin-top: 12px;
+  text-align: left;
+  display: block;
+}
+
+/* ====== los campos====== */
+input, select {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 0 auto 12px auto;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #a1141d;
+  box-shadow: 0 0 5px rgba(161, 20, 29, 0.3);
+  outline: none;
+}
+
+/* ====== el boton====== */
+button {
+  background-color: #a1141d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #7a0a17;
+  transform: scale(1.03);
+}
+
+
+label:hover {
+  color: #a1141d;
+  transition: color 0.3s ease;
+}

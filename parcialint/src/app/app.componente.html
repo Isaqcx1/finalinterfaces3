@@ -1,0 +1,14 @@
+<nav *ngIf="auth.isLoggedIn()">
+
+  <!-- usuario-->
+  <a routerLink="/registrar">Registrar Mascota</a>
+  <a routerLink="/agendar">Agendar Cita</a>
+
+  <!-- yo admin xd-->
+  <a *ngIf="auth.isAdmin()" routerLink="/historial">Historial</a>
+  <a *ngIf="auth.isAdmin()" routerLink="/listado">Listado De Citas</a>
+
+  <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<router-outlet></router-outlet>
