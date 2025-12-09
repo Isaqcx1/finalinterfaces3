@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  background: #eef6ff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.menu-admin {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.menu-admin a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.menu-admin button {
+  margin-left: auto;
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* ✅ RESUMEN */
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  text-align: center;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+/* ✅ BARRAS */
+.progreso {
+  background: #c7d2fe;
+  height: 16px;
+  border-radius: 8px;
+}
+
+.fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 8px;
+}
+
+/* ✅ TABLA */
+.tabla {
+  background: white;
+  border-collapse: collapse;
+  width: 320px;
+}
+
+.tabla td, .tabla th {
+  padding: 8px;
+  border: 1px solid #ddd;
+}

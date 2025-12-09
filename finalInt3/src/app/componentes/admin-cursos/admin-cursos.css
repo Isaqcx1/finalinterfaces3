@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  background: #eef6ff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.menu-admin {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.menu-admin a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.menu-admin button {
+  margin-left: auto;
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: white;
+}
+
+/* ✅ HEADER */
+.header-cursos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.btn-nuevo {
+  background: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+}
+
+/* ✅ TABLA */
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabla th, .tabla td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.activo {
+  color: green;
+  font-weight: bold;
+}
+
+.inactivo {
+  color: red;
+  font-weight: bold;
+}
+
+/* ✅ FORMULARIO */
+.formulario {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+/* ✅ BLOQUE DEL FILTRO DECORADO */
+.filtro-categoria {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+/* ✅ TEXTO DEL FILTRO */
+.filtro-categoria label {
+  font-weight: 600;
+  color: #1e40af;
+  font-size: 14px;
+}
+
+/* ✅ SELECT MODERNO */
+.filtro-categoria select {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #c7d2fe;
+  background: #eef2ff;
+  font-weight: 600;
+  color: #1e3a8a;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+
+.filtro-categoria select:hover {
+  background: #dbeafe;
+}
+
+.filtro-categoria select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+/* ✅ BOTÓN EDITAR */
+.btn-editar {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-editar:hover {
+  background: #1e3a8a;
+}
+
+/* ✅ BOTÓN ELIMINAR */
+.btn-eliminar {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: 0.2s;
+}
+
+.btn-eliminar:hover {
+  background: #991b1b;
+}
+/* ✅ FONDO OSCURECIDO */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* ✅ TARJETA MODAL */
+.modal-form {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  width: 500px;
+  max-width: 95%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: zoom .2s ease;
+}
+
+@keyframes zoom {
+  from { transform: scale(.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2563eb;
+}
+
+/* ✅ GRID DE CAMPOS */
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo.ancho {
+  grid-column: span 2;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* ✅ INPUT CON H */
+.input-horas {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.input-horas span {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* ✅ BOTONES */
+.botones-form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-guardar {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-guardar:hover {
+  background: #1e4fd8;
+}
+
+.btn-cancelar {
+  background: #e5e7eb;
+  color: #333;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background: #d1d5db;
+}

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ✅ CARD DEL REGISTER */
+.register-container {
+  width: 440px;
+  padding: 40px 35px;
+  border-radius: 20px;
+  background: #ffffff;
+  text-align: left;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.7s ease;
+}
+
+/* ✅ TÍTULO */
+h2 {
+  text-align: center;
+  color: #1e40af;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+/* ✅ LABELS */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* ✅ INPUTS */
+input {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1.5px solid #c7d2fe;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+}
+
+/* ✅ BOTÓN PRINCIPAL */
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  transform: translateY(-2px);
+}
+
+/* ✅ MENSAJE */
+.mensaje {
+  color: #1d4ed8;
+  margin-top: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ✅ TEXTO DE VOLVER AL LOGIN */
+.login {
+  margin-top: 22px;
+  font-size: 15px;
+  color: #475569;
+  text-align: center;
+}
+
+.login a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ ANIMACIÓN */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

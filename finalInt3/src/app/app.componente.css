@@ -1,0 +1,40 @@
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  gap: 15px; 
+  font-family: Arial, sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c70000; 
+  border: 2px solid #c70000;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+
+nav a:hover {
+  background-color: #c70000;
+  color: white;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: #c70000;
+  width: 80%;
+  margin: 10px auto 20px auto;
+}
+
+
+router-outlet {
+  display: block;
+  margin: 0 auto;
+  max-width: 900px;
+}

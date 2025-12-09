@@ -1,0 +1,12 @@
+
+<div class="register-card">
+  <h2>Crear cuenta</h2>
+  <label>Usuario</label>
+  <input [(ngModel)]="nombre" />
+  <label>Contraseña</label>
+  <input type="password" [(ngModel)]="password" />
+  <label>Confirmar</label>
+  <input type="password" [(ngModel)]="confirm" />
+  <button (click)="registrar()">Crear</button>
+  <p>{{ mensaje }}</p>
+</div>

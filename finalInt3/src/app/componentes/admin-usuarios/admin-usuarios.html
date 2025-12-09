@@ -1,0 +1,72 @@
+<!-- 🟥 MENÚ ADMIN -->
+<nav class="menu-admin">
+  <a routerLink="/admin/dashboard">Dashboard</a>
+  <a routerLink="/admin/cursos">Cursos</a>
+  <a routerLink="/admin/usuarios">Usuarios</a>
+  <a routerLink="/admin/reportes">Reportes</a>
+  <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<h2>👥 Usuarios Registrados</h2>
+
+<!-- ✅ TABLA DE USUARIOS -->
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Rol</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let u of usuarios">
+      <td>{{ u.nombre }}</td>
+      <td>{{ u.role }}</td>
+      <td>
+        <button class="btn-ver" (click)="verDetalle(u)">
+          Ver Cursos
+        </button>
+        <button class="btn-eliminar" (click)="eliminarUsuario(u)">
+          Eliminar Usuario
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ✅ PANEL DE CURSOS DEL USUARIO -->
+<div class="detalle-usuario" *ngIf="usuarioSeleccionado">
+
+  <h3>📚 Cursos de {{ usuarioSeleccionado.nombre }}</h3>
+
+  <table class="tabla">
+    <thead>
+      <tr>
+        <th>Curso</th>
+        <th>Duración</th>
+        <th>Estado</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let c of cursosUsuario">
+        <td>{{ c.nombreCurso }}</td>
+        <td>{{ c.duracion }}</td>
+        <td>{{ c.estado }}</td>
+        <td>
+          <button class="btn-eliminar"
+                  (click)="eliminarCursoUsuario(c)">
+            Quitar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn-cerrar" (click)="cerrarDetalle()">
+    Cerrar
+  </button>
+
+</div>

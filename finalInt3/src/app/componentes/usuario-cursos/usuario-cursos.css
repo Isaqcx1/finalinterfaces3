@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  background: #eef6ff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+/* ✅ MENÚ USUARIO (REUTILIZABLE EN TODAS LAS VISTAS) */
+.menu-usuario {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.menu-usuario a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.menu-usuario a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ BOTÓN CERRAR SESIÓN A LA DERECHA */
+.menu-usuario button {
+  margin-left: auto;
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;   /* tamaño medio */
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-usuario button:hover {
+  background: #dc2626;
+}
+
+
+/* Categorías */
+.categorias {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.categorias button {
+  background: #dbeafe;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #1e3a8a;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.categorias button:hover,
+.categorias button.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Tarjetas de cursos */
+.curso-card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  margin-bottom: 18px;
+}
+
+.curso-card strong {
+  color: #1e3a8a;
+  font-size: 17px;
+}
+
+button.inscribir {
+  margin-top: 10px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+button.inscribir:hover {
+  background: #1e3a8a;
+}
+/* ✅ CONTENEDOR DE LOS CURSOS EN GRILLA */
+.lista-cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* ✅ TARJETAS MÁS UNIFORMES */
+.lista-cursos .card {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.lista-cursos .card:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ BOTÓN DE INSCRIPCIÓN MÁS BONITO */
+.lista-cursos button {
+  margin-top: 12px;
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lista-cursos button:hover {
+  background: #1e3a8a;
+}

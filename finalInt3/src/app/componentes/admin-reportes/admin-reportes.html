@@ -1,0 +1,59 @@
+<!-- 🟥 MENÚ ADMIN -->
+<nav class="menu-admin">
+  <a routerLink="/admin/dashboard">Dashboard</a>
+  <a routerLink="/admin/cursos">Cursos</a>
+  <a routerLink="/admin/usuarios">Usuarios</a>
+  <a routerLink="/admin/reportes">Reportes</a>
+  <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<h2>📊 Reportes Generales</h2>
+
+<div class="resumen">
+  <div class="card">👥 Usuarios: {{ totalUsuarios }}</div>
+  <div class="card">📚 Cursos: {{ totalCursos }}</div>
+  <div class="card">✅ Inscripciones: {{ totalInscripciones }}</div>
+
+  <!-- ✅ PROTECCIÓN PARA QUE NO EXPLOTE SI AÚN CARGA -->
+  <div class="card">
+    💰 Monto total: S/. {{ montoTotal ? montoTotal.toFixed(2) : '0.00' }}
+  </div>
+</div>
+
+<hr>
+
+<h3>📂 Cursos Registrados por Categoría</h3>
+
+<div class="barras">
+  <div *ngFor="let c of cursosPorCategoria" class="barra">
+    <span>{{ c.nombre }} ({{ c.cantidad }})</span>
+    
+    <div class="progreso">
+      <!-- ✅ EVITA DIVISIÓN ENTRE 0 -->
+      <div 
+        class="fill" 
+        [style.width.%]="totalInscripciones > 0 ? (c.cantidad / totalInscripciones) * 100 : 0">
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<h3>🏆 Usuarios con más cursos</h3>
+
+<table class="tabla">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Cantidad</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let u of usuariosTop">
+      <td>{{ u.nombre }}</td>
+      <td>{{ u.cantidad }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,119 @@
+<!-- MENÚ ADMIN -->
+<nav class="menu-admin">
+    <a routerLink="/admin/dashboard">Dashboard</a>
+    <a routerLink="/admin/cursos">Cursos</a>
+    <a routerLink="/admin/usuarios">Usuarios</a>
+    <a routerLink="/admin/reportes">Reportes</a>
+    <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<div class="header-cursos">
+    <h2>📚 Gestión de Cursos</h2>
+
+    <button class="btn-nuevo" (click)="nuevoCurso()">➕ Nuevo Curso</button>
+</div>
+<!-- ✅ FILTRO POR CATEGORÍA -->
+<div class="filtro-categoria">
+    <label>Filtrar por categoría:</label>
+    <select [(ngModel)]="categoriaFiltro">
+        <option value="Todas">Todas</option>
+        <option *ngFor="let c of categorias" [value]="c">{{ c }}</option>
+    </select>
+</div>
+
+<!-- ✅ TABLA DE CURSOS -->
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Duración</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let c of cursosFiltrados">
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.categoria }}</td>
+            <td>{{ c.duracion }} h</td>
+            <td>S/. {{ c.precio }}</td>
+            <td [class.activo]="c.estado === 'activo'" [class.inactivo]="c.estado === 'inactivo'">
+                {{ c.estado }}
+            </td>
+            <td>
+                <button class="btn-editar" (click)="editarCurso(c)">Editar</button>
+                <button class="btn-eliminar" (click)="eliminarCurso(c.id)">Eliminar</button>
+
+
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ✅ FORMULARIO SOLO CUANDO SE NECESITA -->
+<!-- ✅ MODAL BONITO PARA CREAR / EDITAR CURSO -->
+<div class="overlay" *ngIf="mostrarFormulario">
+
+  <div class="modal-form">
+
+    <h3>{{ editando ? "✏️ Editar Curso" : "➕ Nuevo Curso" }}</h3>
+
+    <div class="grid-form">
+
+      <div class="campo">
+        <label>Nombre</label>
+        <input [(ngModel)]="cursoActual.nombre" placeholder="Nombre del curso">
+      </div>
+
+      <div class="campo">
+        <label>Duración (horas)</label>
+        <div class="input-horas">
+          <input type="number" min="1" step="1" [(ngModel)]="cursoActual.duracion">
+          <span>H</span>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label>Precio (S/.)</label>
+        <input type="number" [(ngModel)]="cursoActual.precio">
+      </div>
+
+      <div class="campo">
+        <label>Categoría</label>
+        <select [(ngModel)]="cursoActual.categoria">
+          <option *ngFor="let c of categorias" [value]="c">{{ c }}</option>
+        </select>
+      </div>
+
+      <div class="campo ancho">
+        <label>Descripción</label>
+        <textarea rows="3" [(ngModel)]="cursoActual.descripcion"></textarea>
+      </div>
+
+      <div class="campo">
+        <label>Estado</label>
+        <select [(ngModel)]="cursoActual.estado">
+          <option value="activo">✅ Activo</option>
+          <option value="inactivo">❌ Inactivo</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="botones-form">
+      <button class="btn-guardar" (click)="guardarCurso()">
+        {{ editando ? "Guardar Cambios" : "Crear Curso" }}
+      </button>
+
+      <button class="btn-cancelar" (click)="mostrarFormulario = false">
+        Cancelar
+      </button>
+    </div>
+
+  </div>
+
+</div>
