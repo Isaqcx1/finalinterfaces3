@@ -16,19 +16,28 @@ export class LoginComponent {
   password = '';
   mensaje = '';
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) { }
 
   ingresar() {
+    // ✅ PRIMER FILTRO: campos vacíos
+    if (!this.nombre || !this.password) {
+      this.mensaje = '';   // no mostrar error aún
+      return;
+    }
+
     const ok = this.auth.login(this.nombre, this.password);
+
     if (!ok) {
       this.mensaje = 'Usuario o contraseña incorrectos';
       return;
     }
+
     const usuario = this.auth.getUsuarioActual();
+
     if (usuario?.role === 'admin') {
-      this.router.navigate(['/listado']);
+      this.router.navigate(['/admin/dashboard']);
     } else {
-      this.router.navigate(['/registrar']);
+      this.router.navigate(['/usuario/dashboard']);
     }
   }
 }

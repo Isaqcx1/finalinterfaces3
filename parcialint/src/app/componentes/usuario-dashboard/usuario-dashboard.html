@@ -1,0 +1,29 @@
+<!-- MENÚ DEL USUARIO -->
+<nav class="menu-usuario">
+    <a routerLink="/usuario/dashboard">Inicio</a>
+    <a routerLink="/usuario/cursos">Cursos</a>
+    <a routerLink="/usuario/perfil">Perfil</a>
+    <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<h2>Bienvenido, {{ usuario?.nombre }}</h2>
+
+<!-- MIS CURSOS -->
+<section>
+    <h3>📘 Mis Cursos</h3>
+
+    <div *ngIf="misCursos.length === 0">
+        Aún no estás inscrito en ningún curso.
+    </div>
+
+    <div *ngFor="let c of misCursos" class="card">
+        <h4>{{ c.nombre }}</h4>
+        <p>{{ c.descripcion }}</p>
+        <p><strong>Duración:</strong> {{ c.duracion }}</p>
+        <p><strong>Estado:</strong> {{ c.estado }}</p>
+        <p><strong>Fecha de inscripción:</strong> {{ c.fecha }}</p>
+
+        <button class="btn-quitar" (click)="quitarCurso(c)">❌ Quitar</button>
+    </div>
+
+</section>

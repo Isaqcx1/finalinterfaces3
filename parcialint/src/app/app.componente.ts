@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet, Router } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './servicios/auth.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterLink, RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.componente.html',
   styleUrls: ['./app.componente.css']
 })
 export class AppComponente {
+
   constructor(
     public auth: AuthService,
     private router: Router

@@ -20,10 +20,11 @@ export class RegisterComponent {
   constructor(private auth: AuthService, private router: Router) {}
 
   registrar() {
-    if (!this.nombre || !this.password) {
-      this.mensaje = 'Complete los campos';
+    if (!this.nombre || !this.password || !this.confirm) {
+      this.mensaje = 'Complete todos los campos';
       return;
     }
+
     if (this.password !== this.confirm) {
       this.mensaje = 'Las contraseñas no coinciden';
       return;
@@ -32,7 +33,7 @@ export class RegisterComponent {
     const ok = this.auth.registrarUsuario({
       nombre: this.nombre,
       password: this.password,
-      role: 'user'
+      role: 'usuario'   
     });
 
     if (!ok) {

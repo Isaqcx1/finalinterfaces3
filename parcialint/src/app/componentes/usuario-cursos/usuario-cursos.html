@@ -1,0 +1,32 @@
+<!-- MENÚ USUARIO -->
+<nav class="menu-usuario">
+    <a routerLink="/usuario/dashboard">Inicio</a>
+    <a routerLink="/usuario/cursos">Cursos</a>
+    <a routerLink="/usuario/perfil">Perfil</a>
+    <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<h2>📚 Cursos por Categoría</h2>
+
+<!-- CATEGORÍAS -->
+<div class="categorias">
+    <button *ngFor="let c of categorias" (click)="seleccionarCategoria(c)" [class.activa]="c === categoriaSeleccionada">
+        {{ c }}
+    </button>
+
+    <button (click)="categoriaSeleccionada = null">
+        Todos
+    </button>
+</div>
+
+<!-- LISTA DE CURSOS -->
+<div class="lista-cursos">
+    <div *ngFor="let c of cursosFiltrados" class="card">
+        <h4>{{ c.nombre }}</h4>
+        <p><strong>Categoría:</strong> {{ c.categoria }}</p>
+        <p><strong>Duración:</strong> {{ c.duracion }}</p>
+        <p><strong>Precio:</strong> S/. {{ c.precio }}</p>
+        <button (click)="inscribirse(c)">Inscribirme</button>
+
+    </div>
+</div>

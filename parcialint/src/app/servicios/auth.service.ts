@@ -1,7 +1,6 @@
-
 import { Injectable } from '@angular/core';
 
-export type Role = 'user' | 'admin';
+export type Role = 'usuario' | 'admin';
 
 export interface Usuario {
   nombre: string;
@@ -15,12 +14,12 @@ export class AuthService {
   private sessionKey = 'usuario_actual';
 
   constructor() {
-    
-    const s = localStorage.getItem(this.key);
-    if (!s) {
+    const existentes = localStorage.getItem(this.key);
+
+    // Crear admin por defecto si no existe
+    if (!existentes) {
       const admins: Usuario[] = [
-        { nombre: 'Isaac', password: '123', role: 'admin' },
-        
+        { nombre: 'admin', password: '123', role: 'admin' },
       ];
       localStorage.setItem(this.key, JSON.stringify(admins));
     }
@@ -33,21 +32,30 @@ export class AuthService {
 
   registrarUsuario(usuario: Usuario): boolean {
     const usuarios = this.obtenerUsuarios();
-    const existe = usuarios.find(u => u.nombre.toLowerCase() === usuario.nombre.toLowerCase());
+
+    const existe = usuarios.find(
+      u => u.nombre.toLowerCase() === usuario.nombre.toLowerCase()
+    );
+
     if (existe) return false;
+
     usuarios.push(usuario);
     localStorage.setItem(this.key, JSON.stringify(usuarios));
     return true;
   }
 
   login(nombre: string, password: string): Usuario | null {
-  const usuarios = this.obtenerUsuarios();
-  const u = usuarios.find(x => x.nombre === nombre && x.password === password);
-  if (!u) return null;
-  localStorage.setItem(this.sessionKey, JSON.stringify(u));
-  return u; 
-}
+    const usuarios = this.obtenerUsuarios();
+    const u = usuarios.find(
+      x => x.nombre === nombre && x.password === password
+    );
 
+    if (!u) return null;
+
+    // guardar sesión
+    localStorage.setItem(this.sessionKey, JSON.stringify(u));
+    return u;
+  }
 
   logout() {
     localStorage.removeItem(this.sessionKey);
@@ -62,8 +70,12 @@ export class AuthService {
     return !!this.getUsuarioActual();
   }
 
-  isAdmin(): boolean {
+  getRole(): Role | null {
     const u = this.getUsuarioActual();
-    return !!u && u.role === 'admin';
+    return u ? u.role : null;
+  }
+
+  isAdmin(): boolean {
+    return this.getRole() === 'admin';
   }
 }

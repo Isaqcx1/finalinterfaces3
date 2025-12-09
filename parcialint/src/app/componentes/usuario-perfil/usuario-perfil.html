@@ -1,0 +1,30 @@
+<!-- MENÚ USUARIO -->
+<nav class="menu-usuario">
+  <a routerLink="/usuario/dashboard">Inicio</a>
+  <a routerLink="/usuario/cursos">Cursos</a>
+  <a routerLink="/usuario/perfil">Perfil</a>
+  <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<h2>👤 Mi Perfil</h2>
+
+<div class="perfil-card" *ngIf="usuario">
+  <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
+  <p><strong>Rol:</strong> {{ usuario.role }}</p>
+</div>
+
+<hr>
+
+<h3>🔒 Cambiar Contraseña</h3>
+
+<div class="form-password">
+  <label>Nueva contraseña</label>
+  <input type="password" [(ngModel)]="nuevaPassword" />
+
+  <label>Confirmar contraseña</label>
+  <input type="password" [(ngModel)]="confirmarPassword" />
+
+  <button (click)="cambiarPassword()">Actualizar</button>
+
+  <p class="mensaje">{{ mensaje }}</p>
+</div>

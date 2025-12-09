@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  background: #eef6ff;  /* Fondo azul claro */
+  min-height: 100vh;
+}
+
+/* ✅ MENÚ USUARIO (REUTILIZABLE EN TODAS LAS VISTAS) */
+.menu-usuario {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.menu-usuario a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.menu-usuario a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ BOTÓN CERRAR SESIÓN A LA DERECHA */
+.menu-usuario button {
+  margin-left: auto;
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;   /* tamaño medio */
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-usuario button:hover {
+  background: #dc2626;
+}
+
+
+
+
+/* 🔵 TARJETAS GENERALES */
+.card {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  margin-bottom: 30px;
+}
+
+
+
+/* 🔵 CURSOS DEL USUARIO (estilo tarjeta) */
+.curso-item {
+  background: #f0f7ff;
+  padding: 15px;
+  border-radius: 14px;
+  border-left: 6px solid #2563eb;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.curso-item:hover {
+  transform: translateX(5px);
+}
+
+/* 🔵 INFO DEL CURSO */
+.curso-item strong {
+  font-size: 17px;
+  color: #1e3a8a;
+}
+
+/* 🔵 BOTÓN QUITAR CURSO */
+button.quitar {
+  background: #dc2626;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button.quitar:hover {
+  background: #b91c1c;
+}

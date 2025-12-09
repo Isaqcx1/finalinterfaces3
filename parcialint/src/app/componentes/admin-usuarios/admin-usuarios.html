@@ -1,0 +1,55 @@
+<!-- MENÚ ADMIN -->
+<nav class="menu-admin">
+    <a routerLink="/admin/dashboard">Dashboard</a>
+    <a routerLink="/admin/cursos">Cursos</a>
+    <a routerLink="/admin/usuarios">Usuarios</a>
+    <a routerLink="/admin/reportes">Reportes</a>
+    <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<h2>👥 Usuarios Registrados</h2>
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let u of usuarios">
+            <td>{{ u.nombre }}</td>
+            <td>
+                <button class="btn-ver" (click)="verDetalle(u)">Ver Cursos</button>
+                <button class="btn-eliminar" (click)="eliminarUsuario(u)">Eliminar Usuario</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ✅ DETALLE DE CURSOS -->
+<div class="detalle" *ngIf="usuarioSeleccionado">
+
+    <h3>📘 Cursos de {{ usuarioSeleccionado.nombre }}</h3>
+
+    <div *ngIf="cursosInscritosPorUsuario.length === 0">
+        Este usuario no tiene cursos inscritos.
+    </div>
+
+    <div *ngFor="let c of cursosInscritosPorUsuario" class="card">
+        <h4>{{ c.nombre }}</h4>
+        <p><strong>Duración:</strong> {{ c.duracion }}</p>
+        <p><strong>Estado:</strong> {{ c.estado }}</p>
+        <p><strong>Fecha:</strong> {{ c.fecha }}</p>
+
+        <button class="btn-eliminar" (click)="eliminarCursoUsuario(c)">
+            ❌ Eliminar Curso
+        </button>
+    </div>
+
+    <button class="btn-cerrar" (click)="cerrarDetalle()">Cerrar</button>
+
+
+</div>

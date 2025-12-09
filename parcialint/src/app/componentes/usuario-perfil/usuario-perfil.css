@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:host {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  background: #eef6ff;
+  min-height: 100vh;
+}
+
+/* ✅ MENÚ USUARIO (REUTILIZABLE EN TODAS LAS VISTAS) */
+.menu-usuario {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.menu-usuario a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.menu-usuario a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ BOTÓN CERRAR SESIÓN A LA DERECHA */
+.menu-usuario button {
+  margin-left: auto;
+  background: #ef4444;
+  border: none;
+  padding: 8px 14px;   /* tamaño medio */
+  border-radius: 10px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu-usuario button:hover {
+  background: #dc2626;
+}
+
+
+/* ✅ TÍTULO */
+h2 {
+  text-align: center;
+  color: #1d4ed8;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* ✅ TARJETA DE PERFIL */
+.perfil-card {
+  background: #ffffff;
+  width: 420px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.perfil-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.perfil-card strong {
+  color: #1e40af;
+}
+
+/* ✅ SECCIÓN CAMBIAR CONTRASEÑA */
+h3 {
+  margin-top: 40px;
+  text-align: center;
+  color: #1e3a8a;
+}
+
+.form-password {
+  background: #ffffff;
+  width: 420px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ✅ INPUTS */
+.form-password label {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.form-password input {
+  padding: 12px;
+  border: 1.5px solid #c7d2fe;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.form-password input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.4);
+}
+
+/* ✅ BOTÓN DE ACTUALIZAR (MEDIANO) */
+.form-password button {
+  width: 60%;
+  margin: 15px auto 0;
+  background: #2563eb;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.form-password button:hover {
+  background: #1e3a8a;
+}
+
+/* ✅ MENSAJE */
+.mensaje {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #1d4ed8;
+}

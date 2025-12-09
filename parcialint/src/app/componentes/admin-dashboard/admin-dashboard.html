@@ -1,0 +1,32 @@
+<!-- MENÚ ADMIN -->
+<nav class="menu-admin">
+  <a routerLink="/admin/dashboard">Dashboard</a>
+  <a routerLink="/admin/cursos">Administrar Cursos</a>
+  <a routerLink="/admin/usuarios">Usuarios</a>
+  <a routerLink="/admin/reportes">Reportes</a>
+  <button (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<h2>🟥 Panel del Administrador</h2>
+
+<div class="tarjetas">
+
+  <div class="card">
+    <h3>👥 Usuarios registrados</h3>
+    <p>{{ totalUsuarios }}</p>
+  </div>
+
+  <div class="card">
+    <h3>📚 Cursos creados</h3>
+    <p>{{ totalCursos }}</p>
+  </div>
+
+  <div class="card">
+    <h3>✅ Inscripciones</h3>
+    <p>{{ totalInscripciones }}</p>
+  </div>
+
+</div>
+
+<hr>
+
